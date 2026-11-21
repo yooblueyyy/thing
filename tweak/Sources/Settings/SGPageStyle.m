@@ -208,8 +208,7 @@ UIViewController *SGTopController(void) {
     return top;
 }
 
-NSString *const SGSiteURL = @"https://spoti.pw";
-NSString *const SGRepoURL = @"https://github.com/skopevoj/spoti.pw";
+NSString *const SGRepoURL = @"https://github.com/yooblueyyy/thing";
 NSString *const SGDiscordURL = @"https://discord.gg/9e4GR8TKMj";
 
 void SGOpenURL(NSString *url) {

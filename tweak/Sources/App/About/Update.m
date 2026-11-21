@@ -9,8 +9,7 @@
 #import "Core/SGCore.h"
 #import "About.h"
 
-NSString *const SGUpdateURL = @"https://spoti.pw/api/update";
-static NSString *const kGitHubURL = @"https://api.github.com/repos/skopevoj/spoti.pw/releases?per_page=20";
+static NSString *const kGitHubURL = @"https://api.github.com/repos/yooblueyyy/thing/releases?per_page=20";
 NSString *const SGUpdateCheckedNotification = @"spectra.update.checked.notification";
 
 static NSString *const kChecked = @"spectra.update.checked";
@@ -227,12 +226,6 @@ void SGCheckForUpdate(BOOL force) {
             [NSNotificationCenter.defaultCenter postNotificationName:SGUpdateCheckedNotification object:nil];
         });
     };
-    NSData *body = SGUsageBody();
-    if (body) SGUsageNoteAsked();
-    SGLog(@"update check: asking Spectra %@", body ? @"with the usage body" : @"without the usage body");
-    ask(SGUpdateURL, body, ^(NSArray<NSDictionary *> *releases, NSInteger status, NSError *error) {
-        if (releases) return finish(releases, status, error);
-        SGLog(@"update check: Spectra answered HTTP %ld, asking GitHub", (long)status);
-        ask(kGitHubURL, nil, finish);
-    });
+    SGLog(@"update check: asking GitHub");
+    ask(kGitHubURL, nil, finish);
 }

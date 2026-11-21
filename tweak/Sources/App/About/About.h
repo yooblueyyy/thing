@@ -6,7 +6,6 @@
 #import <UIKit/UIKit.h>
 #import "Settings/SGModPage.h"
 
-extern NSString *const SGUpdateURL;   // Spectra's; the site and the repo are in Settings/SGPageStyle.h
 extern NSString *const SGUpdateCheckedNotification;   // on the main thread, after a check ends either way
 
 // One line of a release's changelog: what changed, under the heading Release Please put it under,
