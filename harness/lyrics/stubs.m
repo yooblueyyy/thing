@@ -6,8 +6,8 @@
 
 UIColor *SGRAccentColor(void) { return nil; }
 
-NSString *const SGPlayerTransitionNotification = @"spotifyglass.playerTransition";
-NSString *const SGPlayerTransitionEndedNotification = @"spotifyglass.playerTransitionEnded";
+NSString *const SGPlayerTransitionNotification = @"spectra.playerTransition";
+NSString *const SGPlayerTransitionEndedNotification = @"spectra.playerTransitionEnded";
 CFTimeInterval SGPlayerTransitionEnds(void) { return 0; }
 
 void SGRPlayFeedback(NSInteger feedback) {}
@@ -17,7 +17,7 @@ NSString *SGLyricsCreditFor(NSString *trackID) { return @"the harness"; }
 NSString *SGLyricsTranslationLanguage(void) { return [NSUserDefaults.standardUserDefaults stringForKey:@"translateTo"]; }
 
 // Line meanings: -title and -artist name the track Genius is searched for, and the setting's key
-// (-spotifyglass.lyricsMeanings 3) turns them on.
+// (-spectra.lyricsMeanings 3) turns them on.
 @interface SGHarnessTrack : NSObject
 @property (nonatomic, copy) NSString *trackTitle, *artistName;
 @end

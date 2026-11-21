@@ -32,7 +32,7 @@ static const SGBlockRule kRules[] = {
 };
 static const size_t kRuleCount = sizeof(kRules) / sizeof(kRules[0]);
 
-static NSString *const kCounts = @"spotifyglass.privacy.counts";
+static NSString *const kCounts = @"spectra.privacy.counts";
 static NSMutableDictionary<NSString *, NSNumber *> *sg_counts;
 
 @interface SGBlockProtocol : NSURLProtocol

@@ -2,9 +2,9 @@
 // is kept by URI, with the name it had when it was blocked, so a rename or a namesake changes nothing.
 #import <UIKit/UIKit.h>
 
-#define SGKeyArtistBlock @"spotifyglass.artistBlock"
-#define SGKeyArtistBlockFeatured @"spotifyglass.artistBlock.featured"   // off: the main artist only
-#define SGKeyArtistBlockList @"spotifyglass.artistBlock.list"
+#define SGKeyArtistBlock @"spectra.artistBlock"
+#define SGKeyArtistBlockFeatured @"spectra.artistBlock.featured"   // off: the main artist only
+#define SGKeyArtistBlockList @"spectra.artistBlock.list"
 
 extern NSString *const SGArtistURI;    // NSString, spotify:artist:…
 extern NSString *const SGArtistName;   // NSString

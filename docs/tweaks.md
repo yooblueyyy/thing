@@ -123,7 +123,7 @@ Shared:
                   in place (AudioEffects.x, SGDSPEngine.m). The buffers are in the unit's output format, the
                   hardware's, not the client format Spotify sets. The effects are the SGDSP*.m files, on Accelerate,
                   Apple's Reverb2 unit, libbs2b and EEL2 (vendor/audio). Settings apply as they change, on a queue of
-                  its own; the file effects read their files from Documents/spoti.pw/Audio effects
+                  its own; the file effects read their files from Documents/Spectra/Audio effects
                   (AudioEffectsFiles.m). Tested on the Mac against harness/audio-effects/, the hook in the simulator
                   against its sim/
     Haptics/      Vibrations (Haptics.h lists its files): a tap of UIKit's feedback generators for the player's and the now
@@ -222,7 +222,7 @@ App:
                    signing warning and the Mod page with the reset
     Onboarding/    the welcome page over Home on the first launch, with Redesigned UI, offered again from the Mod page
 
-Every key a feature stores starts with `spotifyglass.`, whatever it holds: Reset all settings on
+Every key a feature stores starts with `spectra.`, whatever it holds: Reset all settings on
 the Mod page removes by that prefix and has no list to keep up to date. It leaves `SGKeyStock` behind,
 which makes every unset switch read off, so a reset is stock Spotify whatever switches exist.
 
@@ -233,14 +233,14 @@ and Live Activity. The root page in `App/ModSettings.x` holds the Appearance car
 
 ## Make targets
 
-    make build      # out/spoti.pw-<version>.ipa with FLEX in it
+    make build      # out/Spectra-<version>.ipa with FLEX in it
     make release    # the same without FLEX
     make install    # build without FLEX, sign with your certificate, install over USB
     make install FLEX=1   # the same with FLEX, which is what make trees reads through
     make trees      # record view trees screen by screen (FLEX build open on the phone, USB)
     make session    # clean trees, as many snapshots per screen as you like: Enter saves, n goes to the next screen
                     # (SCREENS="playlist artist" for some); every snapshot says whether the mod was at stock
-    make log        # stream [spotifyglass] log lines from the phone
+    make log        # stream [spectra] log lines from the phone
     make flags      # regenerate the flag table from the IPA
 
 ## Mod Settings
@@ -304,7 +304,7 @@ icons alone and applies straight away too.
 
 1. `make trees`, record the screen, read `trees/<screen>.txt` for the classes and frames.
 2. Decide the layer (see Layers), then make `tweak/Sources/<Layer>/<Feature>/` with `<Feature>.h` declaring the switch key
-   (`#define SGKey<Feature> @"spotifyglass.<feature>"`) and `UIViewController *SG<Feature>SettingsPage(void)`.
+   (`#define SGKey<Feature> @"spectra.<feature>"`) and `UIViewController *SG<Feature>SettingsPage(void)`.
 3. Add the hooks in `<Screen>.x`: `#import "Core/SGCore.h"` and the feature header, guard on the
    switch, use `SGGlassFor`/`SGGlassAt` + `SGShapeGlass` for glass and `SGStripBackgrounds` to clear
    Spotify's paint, and end with `%ctor { %init; SGRequireClasses(@[...]); }`, gated first on the layer's look
@@ -312,7 +312,7 @@ icons alone and applies straight away too.
 4. Add `<Feature>Settings.m` returning an `SGModPage` of `SGSection`s of `SGSwitchRow`/`SGHideRow`/
    `SGFlagRow`/`SGChoiceRow`/`SGSliderRow` (Settings/SGModPage.h), and put it on the page of the part of
    Spotify it changes in `App/Pages.m` or `App/ModSettings.x`.
-5. `make install`. Log lines are prefixed `[spotifyglass]`. A FLEX build serves the visible screen's
+5. `make install`. Log lines are prefixed `[spectra]`. A FLEX build serves the visible screen's
    tree on the phone's port 8085, which `make trees` reaches over USB through iproxy.
 
 A class Spotify has renamed shows up in the log as `class X not found, its hooks are inactive`;

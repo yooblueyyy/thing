@@ -11,10 +11,10 @@ typedef NS_ENUM(NSInteger, SGRLyricsText) {
     SGRLyricsTextTranslation,
 };
 
-#define SGRKeyLyricsPronunciation @"spotifyglass.redesign.lyricsPronunciation"   // off until switched on
-#define SGRKeyLyricsTranslation @"spotifyglass.redesign.lyricsTranslation"       // off until switched on
+#define SGRKeyLyricsPronunciation @"spectra.redesign.lyricsPronunciation"   // off until switched on
+#define SGRKeyLyricsTranslation @"spectra.redesign.lyricsTranslation"       // off until switched on
 // The three as the words "lyrics", "pronunciation" and "translation", largest first.
-#define SGRKeyLyricsTextOrder @"spotifyglass.redesign.lyricsTextOrder"
+#define SGRKeyLyricsTextOrder @"spectra.redesign.lyricsTextOrder"
 
 // Posted on the main queue when either switch or the order changes.
 extern NSNotificationName const SGRLyricsTextDidChangeNotification;

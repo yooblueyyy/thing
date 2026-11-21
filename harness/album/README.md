@@ -40,7 +40,7 @@ The log says what the redesign answered with.
 
 `SGLog` goes to the unified log rather than stdout, so the redesign's own lines are read with
 
-    xcrun simctl spawn booted log stream --predicate 'eventMessage CONTAINS "spotifyglass"' --style compact
+    xcrun simctl spawn booted log stream --predicate 'eventMessage CONTAINS "spectra"' --style compact
 
 What it does not cover: the real element framework's autolayout and the heights it measures, the page
 scrolling (Spotify fades the header out by alpha as it goes, which the mock does not), and the flags

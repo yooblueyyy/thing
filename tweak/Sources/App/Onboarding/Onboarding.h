@@ -4,7 +4,7 @@
 // offers it again.
 #import <UIKit/UIKit.h>
 
-#define SGKeyOnboardingSeen @"spotifyglass.onboarding.seen"
+#define SGKeyOnboardingSeen @"spectra.onboarding.seen"
 
 // Presents the tour over the top of the app; does nothing while it is already up.
 void SGShowOnboarding(void);

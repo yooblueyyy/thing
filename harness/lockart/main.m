@@ -20,7 +20,7 @@ static void check(BOOL ok, NSString *what) {
 
 static NSURL *cacheDirectory(void) {
     NSString *caches = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    return [NSURL fileURLWithPath:[caches stringByAppendingPathComponent:@"spoti.pw/LockArtwork"]];
+    return [NSURL fileURLWithPath:[caches stringByAppendingPathComponent:@"Spectra/LockArtwork"]];
 }
 
 // A clip the shape a Canvas is, so the crop has something real to chew on.

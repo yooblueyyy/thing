@@ -5,7 +5,7 @@
 //     THEOS=$HOME/theos ./build.sh && xcrun simctl install <udid> build/AudioEffectsPageHarness.app
 //     xcrun simctl launch <udid> com.vojta.audioeffectspageharness [setup...] [action...]
 //
-// Setup: keep (the stored settings stay; otherwise every spotifyglass.dsp key is cleared first), master
+// Setup: keep (the stored settings stay; otherwise every spectra.dsp key is cleared first), master
 // (the effects on), allon (every effect on), broken (Liveprog's script is one that does not compile), slow
 // (animations at a twentieth of their speed).
 // Actions: scroll=<y>, section=<n> (that card at the top), toggle=<n> (flips card n's switch the way a tap
@@ -14,7 +14,7 @@
 // liveprog|geq, import=<name> (a file of that name picked in the document picker), paste=<text> (the
 // GraphicEQ editor's Paste with that on the clipboard), slide=<section>.<row>:<value> (a slider dragged
 // there), swipe=<section>.<row>:<n> and band=<band>:<n> (VoiceOver's swipe on a slider or an equalizer band,
-// n times), string=<key after spotifyglass.dsp.>:<text> (stored behind the page's back, as the engine's
+// n times), string=<key after spectra.dsp.>:<text> (stored behind the page's back, as the engine's
 // errors turn up), pop, delete=<row> (the library's swipe to delete on that file), hit (which band a finger
 // takes around each handle, to the log), confirm (the alert's destructive button), dump (the stored dsp keys and the first sections' frames to the log).
 #import <UIKit/UIKit.h>
@@ -59,7 +59,7 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     NSUserDefaults *store = NSUserDefaults.standardUserDefaults;
     if (![args containsObject:@"keep"]) {
         for (NSString *key in store.dictionaryRepresentation.allKeys) {
-            if ([key hasPrefix:@"spotifyglass.dsp"]) [store removeObjectForKey:key];
+            if ([key hasPrefix:@"spectra.dsp"]) [store removeObjectForKey:key];
         }
     }
     if ([args containsObject:@"master"]) SGDSPSetSwitch(SGKeyDSP, YES);
@@ -110,9 +110,9 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     blocked.value = ^NSString *{ return @"Off"; };
     return [[SGModPage alloc] initWithTitle:@"Player" intro:@"Changes apply after you restart Spotify. Gestures and Blocked artists apply straight away." sections:@[
         SGSection(nil, @[SGWithSymbol(SGPageRow(@"Gestures", ^UIViewController *{ return nil; }), @"hand.tap"), SGWithSymbol(blocked, @"person.crop.circle.badge.xmark")]),
-        SGSection(@"Vibrations", @[SGWithSymbol(SGSwitchRow(@"Controls", @"Play, pause, skipping, scrubbing, shuffle, repeat and adding a song", @"spotifyglass.x"), @"hand.tap"),
-                                   SGWithSymbol(SGOptionRow(@"Music Haptics", @"Taps and rumbles along with the music", @"spotifyglass.y"), @"waveform")]),
-        SGSection(nil, @[SGChoiceRow(@"Shows", nil, @"spotifyglass.z", @[@"Lyrics", @"Queue"], 0)]),
+        SGSection(@"Vibrations", @[SGWithSymbol(SGSwitchRow(@"Controls", @"Play, pause, skipping, scrubbing, shuffle, repeat and adding a song", @"spectra.x"), @"hand.tap"),
+                                   SGWithSymbol(SGOptionRow(@"Music Haptics", @"Taps and rumbles along with the music", @"spectra.y"), @"waveform")]),
+        SGSection(nil, @[SGChoiceRow(@"Shows", nil, @"spectra.z", @[@"Lyrics", @"Queue"], 0)]),
     ] footer:nil];
 }
 
@@ -197,7 +197,7 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     } else if ([verb isEqualToString:@"string"]) {
         // string=<key suffix>:<text>, stored behind the page's back the way the engine's own changes land.
         NSRange colon = [value rangeOfString:@":"];
-        SGDSPSetString([@"spotifyglass.dsp." stringByAppendingString:[value substringToIndex:colon.location]], [value substringFromIndex:colon.location + 1]);
+        SGDSPSetString([@"spectra.dsp." stringByAppendingString:[value substringToIndex:colon.location]], [value substringFromIndex:colon.location + 1]);
     } else if ([verb isEqualToString:@"confirm"]) {
         // confirm: the destructive button of the alert on screen, pressed.
         UIAlertController *alert = (UIAlertController *)self.nav.topViewController.presentedViewController;
@@ -227,7 +227,7 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     } else if ([verb isEqualToString:@"dump"]) {
         NSDictionary *all = NSUserDefaults.standardUserDefaults.dictionaryRepresentation;
         for (NSString *key in [all.allKeys sortedArrayUsingSelector:@selector(compare:)]) {
-            if ([key hasPrefix:@"spotifyglass.dsp"]) NSLog(@"[harness] %@ = %@", key, all[key]);
+            if ([key hasPrefix:@"spectra.dsp"]) NSLog(@"[harness] %@ = %@", key, all[key]);
         }
         NSLog(@"[harness] summary: %@; on top %@ with %ld sections", SGDSPSummary(), self.nav.topViewController.class,
               (long)table.numberOfSections);

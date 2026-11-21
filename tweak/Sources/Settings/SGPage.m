@@ -24,11 +24,11 @@ static BOOL sg_pagesConform;
 }
 
 - (NSString *)spt_pageIdentifier {
-    return @"spotifyglass";
+    return @"spectra";
 }
 
 - (NSURL *)spt_pageURI {
-    return [NSURL URLWithString:@"spotify:internal:spotifyglass"];
+    return [NSURL URLWithString:@"spotify:internal:spectra"];
 }
 
 @end

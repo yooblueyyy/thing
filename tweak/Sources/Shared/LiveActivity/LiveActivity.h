@@ -21,12 +21,12 @@
 // Threading: main thread only.
 #import <Foundation/Foundation.h>
 
-#define SGKeyLiveActivity @"spotifyglass.liveActivity"
+#define SGKeyLiveActivity @"spectra.liveActivity"
 // Which view it shows, the index into the page's list.
-#define SGKeyLiveActivityView @"spotifyglass.liveActivity.view"
+#define SGKeyLiveActivityView @"spectra.liveActivity.view"
 // What the keys were called while this was the redesign's alone; LiveActivity.x's %ctor moves them over.
-#define SGKeyLiveActivityWas @"spotifyglass.redesign.liveActivity"
-#define SGKeyLiveActivityViewWas @"spotifyglass.redesign.liveActivity.view"
+#define SGKeyLiveActivityWas @"spectra.redesign.liveActivity"
+#define SGKeyLiveActivityViewWas @"spectra.redesign.liveActivity.view"
 
 typedef NS_ENUM(NSInteger, SGLiveActivityView) {
     SGLiveActivityLyrics = 0,

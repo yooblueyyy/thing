@@ -1,27 +1,27 @@
 // Artist: parts of the artist page hidden one switch each (Artist.x). An unset switch is off.
 #import <UIKit/UIKit.h>
 
-#define SGKeyArtistPhotoFade @"spotifyglass.artistPhotoFade"
+#define SGKeyArtistPhotoFade @"spectra.artistPhotoFade"
 
-#define SGHideArtistExplore @"spotifyglass.hide.artistExplore"
-#define SGHideArtistFollow @"spotifyglass.hide.artistFollow"
-#define SGHideArtistMore @"spotifyglass.hide.artistMore"
-#define SGHideArtistShuffle @"spotifyglass.hide.artistShuffle"
-#define SGHideArtistVerified @"spotifyglass.hide.artistVerified"
-#define SGHideArtistListeners @"spotifyglass.hide.artistListeners"
+#define SGHideArtistExplore @"spectra.hide.artistExplore"
+#define SGHideArtistFollow @"spectra.hide.artistFollow"
+#define SGHideArtistMore @"spectra.hide.artistMore"
+#define SGHideArtistShuffle @"spectra.hide.artistShuffle"
+#define SGHideArtistVerified @"spectra.hide.artistVerified"
+#define SGHideArtistListeners @"spectra.hide.artistListeners"
 
-#define SGHideArtistTabBar @"spotifyglass.hide.artistTabBar"
+#define SGHideArtistTabBar @"spectra.hide.artistTabBar"
 
-#define SGHideArtistLikedSongs @"spotifyglass.hide.artistLikedSongs"
-#define SGHideArtistPopular @"spotifyglass.hide.artistPopular"
-#define SGHideArtistPick @"spotifyglass.hide.artistPick"
-#define SGHideArtistReleases @"spotifyglass.hide.artistReleases"
-#define SGHideArtistFeaturing @"spotifyglass.hide.artistFeaturing"
-#define SGHideArtistVideos @"spotifyglass.hide.artistVideos"
-#define SGHideArtistAbout @"spotifyglass.hide.artistAbout"
-#define SGHideArtistPlaylists @"spotifyglass.hide.artistPlaylists"
-#define SGHideArtistFansAlsoLike @"spotifyglass.hide.artistFansAlsoLike"
-#define SGHideArtistAppearsOn @"spotifyglass.hide.artistAppearsOn"
-#define SGHideArtistDiscoveredOn @"spotifyglass.hide.artistDiscoveredOn"
+#define SGHideArtistLikedSongs @"spectra.hide.artistLikedSongs"
+#define SGHideArtistPopular @"spectra.hide.artistPopular"
+#define SGHideArtistPick @"spectra.hide.artistPick"
+#define SGHideArtistReleases @"spectra.hide.artistReleases"
+#define SGHideArtistFeaturing @"spectra.hide.artistFeaturing"
+#define SGHideArtistVideos @"spectra.hide.artistVideos"
+#define SGHideArtistAbout @"spectra.hide.artistAbout"
+#define SGHideArtistPlaylists @"spectra.hide.artistPlaylists"
+#define SGHideArtistFansAlsoLike @"spectra.hide.artistFansAlsoLike"
+#define SGHideArtistAppearsOn @"spectra.hide.artistAppearsOn"
+#define SGHideArtistDiscoveredOn @"spectra.hide.artistDiscoveredOn"
 
 UIViewController *SGArtistSettingsPage(void);   // opened from the Home & Library page

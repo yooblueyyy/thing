@@ -3,8 +3,8 @@
 // native tweaks stripped transparent when Spotify repaints it. The switches are off until asked for.
 #import <UIKit/UIKit.h>
 
-#define SGKeyAmoled @"spotifyglass.amoled"
-#define SGKeyAccent @"spotifyglass.accent"   // 0xRRGGBB; unset or negative keeps Spotify's own green
+#define SGKeyAmoled @"spectra.amoled"
+#define SGKeyAccent @"spectra.accent"   // 0xRRGGBB; unset or negative keeps Spotify's own green
 
 UIColor *SGAccentColor(void);   // nil while Spotify's own green is kept
 NSString *SGAccentLabel(void);  // "#RRGGBB", or the name of Spotify's own

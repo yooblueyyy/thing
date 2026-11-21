@@ -6,7 +6,7 @@ import os
 @available(iOS 17.0, *)
 @objc(SGLiveActivityBridge)
 public final class SGLiveActivityBridge: NSObject {
-    private static let log = Logger(subsystem: "spotifyglass", category: "live activity")
+    private static let log = Logger(subsystem: "spectra", category: "live activity")
 
     private static var current: Activity<SGLyricsAttributes>? {
         Activity<SGLyricsAttributes>.activities.first { $0.activityState == .active || $0.activityState == .stale }
@@ -82,14 +82,14 @@ public final class SGLiveActivityBridge: NSObject {
             return
         }
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-            log.notice("[spotifyglass] live activity: activities are off for this app")
+            log.notice("[spectra] live activity: activities are off for this app")
             return
         }
         do {
             let activity = try Activity.request(attributes: SGLyricsAttributes(), content: content, pushType: nil)
-            log.notice("[spotifyglass] live activity: started \(activity.id, privacy: .public)")
+            log.notice("[spectra] live activity: started \(activity.id, privacy: .public)")
         } catch {
-            log.error("[spotifyglass] live activity: request failed: \(String(describing: error), privacy: .public)")
+            log.error("[spectra] live activity: request failed: \(String(describing: error), privacy: .public)")
         }
     }
 

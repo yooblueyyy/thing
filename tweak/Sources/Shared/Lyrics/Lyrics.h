@@ -20,7 +20,7 @@ SGModRow *SGLyricsWordTimingRow(void);
 // Sweeps a line timed only by the line word by word, on the estimate of when each word is sung, as if
 // the source had timed them. Off, such a line lights up whole as it starts. Off by default: the
 // estimate is a guess dressed up as timing.
-#define SGKeyLyricsSimulateWords @"spotifyglass.lyricsSimulateWords"
+#define SGKeyLyricsSimulateWords @"spectra.lyricsSimulateWords"
 
 // How finely a line was timed by where it came from. The words of a line timed by the line are still
 // there, each with an estimated time, for a page that wants to sweep them anyway; a line with no time

@@ -38,7 +38,7 @@ static UIViewController *plainScreen(void) {
 - (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)options {
     NSArray<NSString *> *arguments = NSProcessInfo.processInfo.arguments;
     if ([arguments containsObject:@"wipe"]) {
-        for (NSString *key in @[@"spotifyglass.update.checked", @"spotifyglass.update.releases", @"spotifyglass.update.told"])
+        for (NSString *key in @[@"spectra.update.checked", @"spectra.update.releases", @"spectra.update.told"])
             [NSUserDefaults.standardUserDefaults removeObjectForKey:key];
     }
     BOOL notice = [arguments containsObject:@"notice"];

@@ -16,9 +16,9 @@
 //   -dump 1        prints the lines as read, with their pronunciations and translations, and quits
 //   -openMenu S    opens the pronunciation and translation menu S seconds in, as a tap on its button would
 //   -toggleAt S    switches the pronunciation and the translation over S seconds in, as the menu would
-// and the lyrics' own settings by their keys: -spotifyglass.lyricsSimulateWords 1 (sweep line timed
-// lines on the estimate), -spotifyglass.redesign.lyricsPronunciation 1,
-// -spotifyglass.redesign.lyricsTranslation 1, -spotifyglass.redesign.lyricsTextOrder '(translation, lyrics, pronunciation)'.
+// and the lyrics' own settings by their keys: -spectra.lyricsSimulateWords 1 (sweep line timed
+// lines on the estimate), -spectra.redesign.lyricsPronunciation 1,
+// -spectra.redesign.lyricsTranslation 1, -spectra.redesign.lyricsTextOrder '(translation, lyrics, pronunciation)'.
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import <objc/message.h>

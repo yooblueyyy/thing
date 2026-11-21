@@ -14,19 +14,19 @@
 // Threading: main thread only.
 #import <UIKit/UIKit.h>
 
-#define SGKeyControlHaptics @"spotifyglass.haptics.controls"
-#define SGKeyMusicHaptics @"spotifyglass.haptics.music"
+#define SGKeyControlHaptics @"spectra.haptics.controls"
+#define SGKeyMusicHaptics @"spectra.haptics.music"
 // How hard the taps are, a percentage within the range below; 100 is the feel each shipped with.
-#define SGKeyControlStrength @"spotifyglass.haptics.controls.strength"
-#define SGKeyMusicStrength @"spotifyglass.haptics.music.strength"
+#define SGKeyControlStrength @"spectra.haptics.controls.strength"
+#define SGKeyMusicStrength @"spectra.haptics.music.strength"
 // What Music Haptics plays along with, an SGMusicFollows.
-#define SGKeyMusicFollows @"spotifyglass.haptics.music.follows"
+#define SGKeyMusicFollows @"spectra.haptics.music.follows"
 // What the keys were called while this was the redesign's alone; the %ctors move them over.
-#define SGKeyControlHapticsWas @"spotifyglass.redesign.haptics.controls"
-#define SGKeyMusicHapticsWas @"spotifyglass.redesign.haptics.music"
-#define SGKeyControlStrengthWas @"spotifyglass.redesign.haptics.controls.strength"
-#define SGKeyMusicStrengthWas @"spotifyglass.redesign.haptics.music.strength"
-#define SGKeyMusicFollowsWas @"spotifyglass.redesign.haptics.music.follows"
+#define SGKeyControlHapticsWas @"spectra.redesign.haptics.controls"
+#define SGKeyMusicHapticsWas @"spectra.redesign.haptics.music"
+#define SGKeyControlStrengthWas @"spectra.redesign.haptics.controls.strength"
+#define SGKeyMusicStrengthWas @"spectra.redesign.haptics.music.strength"
+#define SGKeyMusicFollowsWas @"spectra.redesign.haptics.music.follows"
 
 // Controls go softer only: most of their taps are UIKit's at full intensity already. Music Haptics goes
 // either way: at 200% the rumble reaches 0.7 of the Taptic Engine's most, and most taps their most.

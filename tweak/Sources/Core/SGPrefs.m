@@ -28,7 +28,7 @@ void SGSetInt(NSString *key, NSInteger value) {
     [NSUserDefaults.standardUserDefaults setInteger:value forKey:key];
 }
 
-NSString *const SGFlagOverridePrefix = @"spotifyglass.flag.";
+NSString *const SGFlagOverridePrefix = @"spectra.flag.";
 
 id SGFlagOverride(NSString *key) {
     return [NSUserDefaults.standardUserDefaults objectForKey:[SGFlagOverridePrefix stringByAppendingString:key]];
@@ -51,4 +51,21 @@ void SGMigrateKey(NSString *from, NSString *to) {
 void SGRestartSpotify(void) {
     [NSUserDefaults.standardUserDefaults synchronize];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ exit(0); });
+}
+
+// Spectra was spoti.pw: its keys started with spotifyglass. or spotipw. and its files lived in
+// Documents/spoti.pw and Caches/spoti.pw. Carried over once, before any %ctor reads a switch.
+__attribute__((constructor(101))) static void SGMigrateFromSpotiPw(void) {
+    NSUserDefaults *store = NSUserDefaults.standardUserDefaults;
+    for (NSString *key in store.dictionaryRepresentation.allKeys) {
+        for (NSString *old in @[@"spotifyglass.", @"spotipw."]) {
+            if ([key hasPrefix:old]) SGMigrateKey(key, [@"spectra." stringByAppendingString:[key substringFromIndex:old.length]]);
+        }
+    }
+    NSFileManager *files = NSFileManager.defaultManager;
+    for (NSNumber *dir in @[@(NSDocumentDirectory), @(NSCachesDirectory)]) {
+        NSString *base = NSSearchPathForDirectoriesInDomains(dir.unsignedIntegerValue, NSUserDomainMask, YES).firstObject;
+        NSString *from = [base stringByAppendingPathComponent:@"spoti.pw"], *to = [base stringByAppendingPathComponent:@"Spectra"];
+        if ([files fileExistsAtPath:from] && ![files fileExistsAtPath:to]) [files moveItemAtPath:from toPath:to error:nil];
+    }
 }

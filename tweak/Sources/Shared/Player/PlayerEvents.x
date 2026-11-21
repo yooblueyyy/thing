@@ -6,8 +6,8 @@
 #import "Core/SGCore.h"
 #import "PlayerEvents.h"
 
-NSString *const SGPlayerTransitionNotification = @"spotifyglass.playerTransition";
-NSString *const SGPlayerTransitionEndedNotification = @"spotifyglass.playerTransitionEnded";
+NSString *const SGPlayerTransitionNotification = @"spectra.playerTransition";
+NSString *const SGPlayerTransitionEndedNotification = @"spectra.playerTransitionEnded";
 static CFTimeInterval sg_transitionEnds;
 static NSUInteger sg_transitionGeneration;
 

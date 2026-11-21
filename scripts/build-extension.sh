@@ -4,7 +4,7 @@
 #
 #   scripts/build-extension.sh <host Info.plist> <out dir>
 #
-# Writes <out dir>/SpotifyGlassLiveActivity.appex and <out dir>/app/Metadata.appintents, whose actions
+# Writes <out dir>/SpectraLiveActivity.appex and <out dir>/app/Metadata.appintents, whose actions
 # pipeline.sh merges into Spotify's own. Needs Xcode (xcode-select or DEVELOPER_DIR): the metadata
 # processor ships only with it.
 set -euo pipefail
@@ -12,7 +12,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 HOST_PLIST="${1:?usage: $0 <host Info.plist> <out dir>}"
 OUT="${2:?usage: $0 <host Info.plist> <out dir>}"
-NAME=SpotifyGlassLiveActivity
+NAME=SpectraLiveActivity
 APPEX="$OUT/$NAME.appex"
 SHARED="$ROOT/tweak/Sources/Shared/LiveActivity/LiveActivityShared.swift"
 WIDGET="$ROOT/extension/LiveActivity/LiveActivityWidget.swift"
@@ -57,7 +57,7 @@ plutil -convert binary1 "$APPEX/Info.plist"
 
 # The taps' intents run inside Spotify, so Spotify's metadata has to name them too, under the
 # module the tweak compiles them in (Theos names it after the tweak instance).
-metadata spotifyglass 16.0 "$OUT/app" "$SHARED"
+metadata spectra 16.0 "$OUT/app" "$SHARED"
 
 codesign -f -s - "$APPEX" >/dev/null 2>&1
 rm -rf "$WORK"

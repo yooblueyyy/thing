@@ -17,8 +17,8 @@ __weak UIView *sgr_playlistRoot = nil;
 
 #pragma mark - Shared/Player/PlayerEvents.x
 
-NSString *const SGPlayerTransitionNotification = @"spotifyglass.playerTransition";
-NSString *const SGPlayerTransitionEndedNotification = @"spotifyglass.playerTransitionEnded";
+NSString *const SGPlayerTransitionNotification = @"spectra.playerTransition";
+NSString *const SGPlayerTransitionEndedNotification = @"spectra.playerTransitionEnded";
 CFTimeInterval SGPlayerTransitionEnds(void) { return 0; }
 
 #pragma mark - Shared/Player/PlayerState.x

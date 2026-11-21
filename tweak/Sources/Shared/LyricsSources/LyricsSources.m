@@ -18,9 +18,9 @@ static const NSUInteger kKeptTracks = 40;
 
 // What the switches were called while Musixmatch was the only source; read once, to carry an
 // existing install's settings over to the order.
-static NSString *const kLegacyMusixmatch = @"spotifyglass.musixmatchLyrics";
-static NSString *const kLegacyAllTracks = @"spotifyglass.musixmatchAllTracks";
-static NSString *const kLegacyNetEase = @"spotifyglass.neteaseWordTiming";
+static NSString *const kLegacyMusixmatch = @"spectra.musixmatchLyrics";
+static NSString *const kLegacyAllTracks = @"spectra.musixmatchAllTracks";
+static NSString *const kLegacyNetEase = @"spectra.neteaseWordTiming";
 
 @implementation SGLyricsResult
 @end
@@ -457,7 +457,7 @@ void SGLyricsNoteSpotifyHas(NSString *trackID, BOOL has) {
     }
 }
 
-NSString *const SGLyricsOwnRequestKey = @"spotifyglass.ownRequest";
+NSString *const SGLyricsOwnRequestKey = @"spectra.ownRequest";
 
 // The cards under the player load together, and the list is shown without any card still loading
 // once this many milliseconds have passed (NowPlaying_ScrollImpl's scrollCardsAsyncLoadingTimeoutMs,

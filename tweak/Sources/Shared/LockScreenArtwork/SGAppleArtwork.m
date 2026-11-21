@@ -2,7 +2,7 @@
 #import "SGAppleArtwork.h"
 #import "SGCanvas.h"
 
-static NSString *const kTokenKey = @"spotifyglass.lockscreen.appletoken";
+static NSString *const kTokenKey = @"spectra.lockscreen.appletoken";
 static NSString *const kWebPlayer = @"https://music.apple.com/us/browse";
 static NSString *const kSearch = @"https://amp-api.music.apple.com/v1/catalog/us/search";
 static NSString *const kBrowser = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "

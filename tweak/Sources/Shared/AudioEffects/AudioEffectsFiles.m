@@ -1,4 +1,4 @@
-// The audio effects' file libraries: Documents/spoti.pw/Audio effects/<Convolver|DDC|Liveprog>, where the
+// The audio effects' file libraries: Documents/Spectra/Audio effects/<Convolver|DDC|Liveprog>, where the
 // file effects find their files by name. Documents, which the app's backups keep. Every file in them is
 // one the user imported.
 //
@@ -8,7 +8,7 @@
 #import "AudioEffects.h"
 #import "AudioEffectsApply.h"
 
-static NSString *const SGDSPFileErrorDomain = @"spotifyglass.dsp.files";
+static NSString *const SGDSPFileErrorDomain = @"spectra.dsp.files";
 
 static NSString *libraryName(SGDSPFileKind kind) {
     switch (kind) {
@@ -58,7 +58,7 @@ static void adoptEarlierLibrary(SGDSPFileKind kind, NSString *documents, NSStrin
         ]];
     });
     NSFileManager *files = NSFileManager.defaultManager;
-    NSString *earlier = [[documents stringByAppendingPathComponent:@"spoti.pw/JamesDSP"] stringByAppendingPathComponent:libraryName(kind)];
+    NSString *earlier = [[documents stringByAppendingPathComponent:@"Spectra/JamesDSP"] stringByAppendingPathComponent:libraryName(kind)];
     NSUInteger moved = 0;
     for (NSString *name in [files contentsOfDirectoryAtPath:earlier error:nil]) {
         if ([name hasPrefix:@"."] || [installedByEngine containsObject:name]) continue;
@@ -73,7 +73,7 @@ static void adoptEarlierLibrary(SGDSPFileKind kind, NSString *documents, NSStrin
 NSString *SGDSPLibraryDirectory(SGDSPFileKind kind) {
     static os_unfair_lock lock = OS_UNFAIR_LOCK_INIT;
     NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *directory = [[documents stringByAppendingPathComponent:@"spoti.pw/Audio effects"] stringByAppendingPathComponent:libraryName(kind)];
+    NSString *directory = [[documents stringByAppendingPathComponent:@"Spectra/Audio effects"] stringByAppendingPathComponent:libraryName(kind)];
     os_unfair_lock_lock(&lock);
     BOOL isDirectory = NO;
     if (![NSFileManager.defaultManager fileExistsAtPath:directory isDirectory:&isDirectory] || !isDirectory) {

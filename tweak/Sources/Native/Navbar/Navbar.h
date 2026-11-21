@@ -3,7 +3,7 @@
 // one of Spotify's, by the label under its icon. No list at all is Spotify's order, all shown.
 #import <UIKit/UIKit.h>
 
-#define SGKeyNavbar @"spotifyglass.navbar"
+#define SGKeyNavbar @"spectra.navbar"
 
 extern NSString *const SGNavbarID;      // NSString, the entry's identity
 extern NSString *const SGNavbarTitle;   // NSString, the name in the settings list and under the icon

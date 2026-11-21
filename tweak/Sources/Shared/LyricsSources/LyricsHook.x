@@ -13,8 +13,8 @@ static NSString *const kLyricsPath = @"/color-lyrics/v2/track/";
 static NSString *const kCardListPath = @"/scrollsita/";
 static NSString *const kTrackPrefix = @"spotify:track:";
 // On a request sent to the donor, the track it really asks for.
-static NSString *const kDonorForKey = @"spotifyglass.lyricsDonorFor";
-static NSString *const kUnnamedProvider = @"spoti.pw";
+static NSString *const kDonorForKey = @"spectra.lyricsDonorFor";
+static NSString *const kUnnamedProvider = @"Spectra";
 
 typedef void (^SGDisposition)(NSURLSessionResponseDisposition disposition);
 typedef void (^SGForwardResponse)(NSURLResponse *response, SGDisposition handler);

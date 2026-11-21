@@ -8,7 +8,7 @@
 #import "About.h"
 #import "App/Onboarding/Onboarding.h"
 
-static NSString *const kTold = @"spotifyglass.update.told";
+static NSString *const kTold = @"spectra.update.told";
 static const NSTimeInterval kSettle = 6;   // after the app comes up, for its own screens to land
 static const NSTimeInterval kRetry = 4;
 static const NSInteger kTries = 15;        // a minute of waiting for the screen, then not this run

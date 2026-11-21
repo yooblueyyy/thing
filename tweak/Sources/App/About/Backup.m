@@ -6,10 +6,10 @@
 // Every key under the prefix travels, the way the reset sweeps them, so a new switch needs nothing
 // here. What is left out belongs to this install rather than to its user's choices.
 static BOOL isSetting(NSString *key) {
-    if (![key hasPrefix:@"spotifyglass."]) return NO;
-    for (NSString *local in @[@"spotifyglass.adblock.counts", @"spotifyglass.privacy.counts", @"spotifyglass.update.",
-                              @"spotifyglass.signing.", @"spotifyglass.onboarding.", @"spotifyglass.navbar.stock",
-                              @"spotifyglass.redesign.navbar.stock"]) {
+    if (![key hasPrefix:@"spectra."]) return NO;
+    for (NSString *local in @[@"spectra.adblock.counts", @"spectra.privacy.counts", @"spectra.update.",
+                              @"spectra.signing.", @"spectra.onboarding.", @"spectra.navbar.stock",
+                              @"spectra.redesign.navbar.stock"]) {
         if ([key hasPrefix:local]) return NO;
     }
     return YES;
@@ -37,7 +37,7 @@ void SGExportSettings(void) {
         @"settings": settings,
     };
     NSData *data = [NSJSONSerialization dataWithJSONObject:file options:NSJSONWritingPrettyPrinted | NSJSONWritingSortedKeys error:nil];
-    NSURL *url = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"spotifyglass-settings.json"]];
+    NSURL *url = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"spectra-settings.json"]];
     [data writeToURL:url atomically:YES];
 
     UIViewController *top = SGTopController();

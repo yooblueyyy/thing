@@ -11,7 +11,7 @@ Haptics' engine, which logs each call with the strength and the Follows choice t
     xcrun simctl io <udid> screenshot shot.png
 
 Other agents use the simulator too: make a device of your own (`xcrun simctl create`) and address it by UDID.
-Every launch clears the `spotifyglass.redesign.haptics` keys first unless `keep` is on the line; `main.m` lists the
+Every launch clears the `spectra.redesign.haptics` keys first unless `keep` is on the line; `main.m` lists the
 setup words (`controls-off`, `music`, `follows=<n>`, `slow`) and the actions, played one every 0.7 s from 1 s in:
 flipping a switch, dragging a slider and letting go, VoiceOver's swipe on one, the ⓘ, a tap on a row (the Follows
 row, then a name in its list), and `dump`, which logs the stored keys, what the hooks read and the rows shown:

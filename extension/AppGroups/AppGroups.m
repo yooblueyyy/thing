@@ -72,16 +72,16 @@ static NSURL *SGContainerURL(id self, SEL _cmd, NSString *group) {
 static id SGInitWithSuiteName(NSUserDefaults *self, SEL _cmd, NSString *suite) {
   NSURL *url = RedirectedContainer(suite);
   if (url && [self respondsToSelector:@selector(_initWithSuiteName:container:)]) {
-    os_log(sLog, "[spotifyglass] appgroups: %{public}@ -> %{public}@", suite, url.path);
+    os_log(sLog, "[spectra] appgroups: %{public}@ -> %{public}@", suite, url.path);
     return [self _initWithSuiteName:suite container:url];
   }
   return sOrigInitWithSuiteName(self, _cmd, suite);
 }
 
 __attribute__((constructor)) static void SGAppGroupsInit(void) {
-  sLog = os_log_create("spotifyglass", "appgroups");
+  sLog = os_log_create("spectra", "appgroups");
   sEntitled = EntitledGroups();
-  os_log(sLog, "[spotifyglass] appgroups: %{public}@ entitled to %{public}@",
+  os_log(sLog, "[spectra] appgroups: %{public}@ entitled to %{public}@",
          NSBundle.mainBundle.bundleIdentifier, [sEntitled componentsJoinedByString:@", "]);
   if (sEntitled.count == 0) return;
 

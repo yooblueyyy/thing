@@ -14,7 +14,7 @@
 
 NSString *const SGSigningHelpURL = @"https://github.com/skopevoj/spoti.pw#signing-it-yourself";
 
-static NSString *const kWarned = @"spotifyglass.signing.warned";
+static NSString *const kWarned = @"spectra.signing.warned";
 static BOOL sg_fixPending;
 
 // SecTaskCopyValueForEntitlement is not in the iOS SDK, so it is resolved at runtime like the rest

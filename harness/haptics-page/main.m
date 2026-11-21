@@ -6,7 +6,7 @@
 //     THEOS=$HOME/theos ./build.sh && xcrun simctl install <udid> build/HapticsPageHarness.app
 //     xcrun simctl launch <udid> com.vojta.hapticspageharness [setup...] [action...]
 //
-// Setup: keep (the stored settings stay; otherwise every spotifyglass.redesign.haptics key is cleared first),
+// Setup: keep (the stored settings stay; otherwise every spectra.redesign.haptics key is cleared first),
 // controls-off (Controls switched off), music (Music Haptics on), follows=<n>, slow (animations at a twentieth
 // of their speed).
 // Actions: toggle=<section>.<row> (that row's switch flipped the way a tap does), slide=<section>.<row>:<value>
@@ -52,7 +52,7 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     NSUserDefaults *store = NSUserDefaults.standardUserDefaults;
     if (![args containsObject:@"keep"]) {
         for (NSString *key in store.dictionaryRepresentation.allKeys) {
-            if ([key hasPrefix:@"spotifyglass.redesign.haptics"]) [store removeObjectForKey:key];
+            if ([key hasPrefix:@"spectra.redesign.haptics"]) [store removeObjectForKey:key];
         }
     }
     NSMutableArray<NSString *> *actions = [NSMutableArray array];
@@ -138,7 +138,7 @@ static void findViews(UIView *root, Class kind, NSMutableArray *found) {
     } else if ([verb isEqualToString:@"dump"]) {
         NSDictionary *all = NSUserDefaults.standardUserDefaults.dictionaryRepresentation;
         for (NSString *key in [all.allKeys sortedArrayUsingSelector:@selector(compare:)]) {
-            if ([key hasPrefix:@"spotifyglass.redesign.haptics"]) NSLog(@"[harness] stored %@ = %@", key, all[key]);
+            if ([key hasPrefix:@"spectra.redesign.haptics"]) NSLog(@"[harness] stored %@ = %@", key, all[key]);
         }
         NSLog(@"[harness] the hooks read: Controls %@ at %.0f%%, Music Haptics %@ at %.0f%% following %ld", SGEnabled(SGKeyControlHaptics) ? @"on" : @"off",
               SGHapticsStrength(SGKeyControlStrength) * 100, SGFlag(SGKeyMusicHaptics, NO) ? @"on" : @"off",

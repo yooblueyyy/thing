@@ -5,7 +5,7 @@
 #import "SGRPalette.h"
 #import "SGRTokens.h"
 
-NSNotificationName const SGRFieldColorDidChangeNotification = @"spotifyglass.redesign.fieldColorDidChange";
+NSNotificationName const SGRFieldColorDidChangeNotification = @"spectra.redesign.fieldColorDidChange";
 
 static const CGFloat kFallbackHeight = 874;   // a window-less field sizes for an iPhone 17 Pro
 

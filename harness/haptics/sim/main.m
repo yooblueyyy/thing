@@ -252,7 +252,7 @@ static int sg_failures;
 __attribute__((constructor(101))) static void sgr_harnessDefaults(void) {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     for (NSString *key in defaults.dictionaryRepresentation.allKeys) {
-        if ([key hasPrefix:@"spotifyglass."]) [defaults removeObjectForKey:key];
+        if ([key hasPrefix:@"spectra."]) [defaults removeObjectForKey:key];
     }
     [defaults setBool:YES forKey:SGKeyRedesign];
     [defaults setBool:YES forKey:SGKeyMusicHaptics];

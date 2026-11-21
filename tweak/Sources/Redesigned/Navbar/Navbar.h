@@ -4,9 +4,9 @@
 // one of Spotify's, by the label under its icon. No list at all is Spotify's order, all shown.
 #import <UIKit/UIKit.h>
 
-#define SGRKeyNavbar @"spotifyglass.redesign.navbar"
+#define SGRKeyNavbar @"spectra.redesign.navbar"
 // Icons only on the glass bar. Off unless set; applies as soon as the bar lays out again.
-#define SGRKeyNavbarHideLabels @"spotifyglass.redesign.navbar.hideLabels"
+#define SGRKeyNavbarHideLabels @"spectra.redesign.navbar.hideLabels"
 
 extern NSString *const SGRNavbarID;      // NSString, the entry's identity
 extern NSString *const SGRNavbarTitle;   // NSString, the name in the settings list and under the icon

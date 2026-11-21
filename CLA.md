@@ -3,7 +3,7 @@
 Version 1.0
 
 This agreement is between you (the **Contributor**) and Vojtěch Škopek (the **Owner**), who runs
-spoti.pw (<https://github.com/skopevoj/spoti.pw>, the **Project**). It covers every Contribution you
+Spectra (<https://github.com/skopevoj/spoti.pw>, the **Project**). It covers every Contribution you
 have submitted or will submit to the Project.
 
 You accept it in a pull request to the Project, by ticking "I agree to the Contributor License

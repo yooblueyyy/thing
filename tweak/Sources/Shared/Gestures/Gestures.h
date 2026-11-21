@@ -2,10 +2,10 @@
 // next track and a vertical drag with the cards below, so a double tap is what is left free.
 #import <UIKit/UIKit.h>
 
-#define SGKeyGestures @"spotifyglass.gestures"
-#define SGKeyGestureSplit @"spotifyglass.gestures.split"
-#define SGKeyGestureStep @"spotifyglass.gestures.step"
-#define SGKeyGestureZones @"spotifyglass.gestures.zones"
+#define SGKeyGestures @"spectra.gestures"
+#define SGKeyGestureSplit @"spectra.gestures.split"
+#define SGKeyGestureStep @"spectra.gestures.step"
+#define SGKeyGestureZones @"spectra.gestures.zones"
 
 typedef NS_ENUM(NSInteger, SGGestureAction) {
     SGGestureNothing = 0,

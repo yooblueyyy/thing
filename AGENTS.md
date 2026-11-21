@@ -1,4 +1,4 @@
-# spoti.pw
+# Spectra
 
 A Theos tweak (Objective-C + Logos) injected into the decrypted Spotify iOS app. The full guide is
 `docs/tweaks.md`; read it before changing code.
@@ -49,7 +49,7 @@ Rules:
   (forced flags: `Core/SGFlagForce.h`) or a function declared low and defined high.
 - Settings: each layer builds its own rows and sections. `App/Pages.m` and `App/ModSettings.x`
   decide what to show from `SGRedesignedUIStored()`, so native-only pages disappear in the redesign.
-- Keys start with `spotifyglass.` (redesign-only ones with `spotifyglass.redesign.`). Switches are
+- Keys start with `spectra.` (redesign-only ones with `spectra.redesign.`). Switches are
   read at launch, so a change needs a restart.
 
 ## Working on it
@@ -58,7 +58,7 @@ Rules:
   `env -u MAKELEVEL gmake -C tweak clean package`.
 - Look at Spotify's views through recorded trees (`make session` records clean ones into
   `trees/clean/`) before hooking anything. Prove every class and selector against the tree or the binary.
-- Device log: `make log` (`[spotifyglass]` lines).
+- Device log: `make log` (`[spectra]` lines).
 - Releases: Release Please (`.github/workflows/release.yml`). Commit as `feat:` / `fix:` (they bump
   `version.txt` and fill `CHANGELOG.md`; `chore:`, `refactor:` and `docs:` stay out). Merging its
   release PR tags `vX.Y.Z` and attaches the `.deb`. Never edit `version.txt` by hand.

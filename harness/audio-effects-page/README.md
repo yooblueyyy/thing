@@ -12,7 +12,7 @@ directory, and an error for any chosen file with "broken" in its name).
     xcrun simctl io <udid> screenshot shot.png
 
 Other agents use the simulator too: make a device of your own on the iOS 26.5 runtime (`xcrun simctl create`;
-the iOS 27 simulator crashes this harness) and address it by UDID. Every launch clears the `spotifyglass.dsp` keys first unless `keep` is on the line; `main.m` lists the
+the iOS 27 simulator crashes this harness) and address it by UDID. Every launch clears the `spectra.dsp` keys first unless `keep` is on the line; `main.m` lists the
 setup words (`master`, `allon`, `broken`, `slow`) and the actions, played one every 0.7 s from 1 s in:
 scrolling to a card, flipping a card's switch, a band mid-drag and let go, a preset, a tap on a row, the
 file and GraphicEQ pages, an import through the document picker's delegate, Paste, a slider moved, VoiceOver's

@@ -9,7 +9,7 @@
 // Threading: safe from any thread.
 #import <Foundation/Foundation.h>
 
-#define SGKeyRedesign @"spotifyglass.redesign"
+#define SGKeyRedesign @"spectra.redesign"
 
 // The redesign is Liquid Glass, and Liquid Glass is UIGlassEffect, which the system renders and which
 // no older OS can be given. Below iOS 26 the glass calls in Core/SGGlass.m and Redesigned/Kit/SGRGlass.m

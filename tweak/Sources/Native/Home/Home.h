@@ -2,14 +2,14 @@
 // the settings that shape it (HomeGradientChoices.m, the Gradient page in HomeSettings.m).
 #import <UIKit/UIKit.h>
 
-#define SGKeyHomeGradient @"spotifyglass.homeGradient"
+#define SGKeyHomeGradient @"spectra.homeGradient"
 
 // Parts of Home to hide, one switch each (HomeDeclutter.x). An unset switch is off.
-#define SGHideHomeShortcuts @"spotifyglass.hide.homeShortcuts"
-#define SGHideHomePills @"spotifyglass.hide.homePills"
-#define SGHideHomePromo @"spotifyglass.hide.homePromo"
-#define SGHideHomePreviews @"spotifyglass.hide.homePreviews"
-#define SGHideHomeDJ @"spotifyglass.hide.homeDJ"
+#define SGHideHomeShortcuts @"spectra.hide.homeShortcuts"
+#define SGHideHomePills @"spectra.hide.homePills"
+#define SGHideHomePromo @"spectra.hide.homePromo"
+#define SGHideHomePreviews @"spectra.hide.homePreviews"
+#define SGHideHomeDJ @"spectra.hide.homeDJ"
 
 // Every setting the gradient is shaped by. One entry per setting in HomeGradientChoices.m holds the
 // names the Gradient page offers, the key it is stored under and the one it falls back to, so a

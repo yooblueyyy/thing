@@ -155,8 +155,8 @@ def mod_state(text):
         if not sep:
             continue
         value = value.strip()
-        if key.startswith("spotifyglass.flag."):
-            dirty.append(f"flag {key[len('spotifyglass.flag.'):]} forced {value}")
+        if key.startswith("spectra.flag."):
+            dirty.append(f"flag {key[len('spectra.flag.'):]} forced {value}")
         elif value.startswith(("list:", "map:")):
             if not value.endswith(":0"):
                 dirty.append(f"{key} ({value})")

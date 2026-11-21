@@ -12,7 +12,7 @@ by the real estimate in `KaraokeTiming.m`.
 
 `stubs.m` stands in for the player and the store: the position runs from `-at` at `-rate` and holds at
 `-pauseAt` (for `-holdFor` seconds, then runs on). `main.m` lists every launch argument; the lyrics'
-own settings are taken by their keys, e.g. `-spotifyglass.redesign.lyricsPronunciation 1`.
+own settings are taken by their keys, e.g. `-spectra.redesign.lyricsPronunciation 1`.
 
 The fixtures are real TTML and LRC with every word swapped for filler of the same script and length
 (`fixtures/anonymise.py`), so each keeps its song's timing and structure without its lyrics:
@@ -30,7 +30,7 @@ The fixtures are real TTML and LRC with every word swapped for filler of the sam
 - `rtl` (built in) right to left lines among left to right ones, a second voice, a break before the
   last line; `rtlx` the same with translations and a romanization
 
-Lines timed by the line light up whole; `-spotifyglass.lyricsSimulateWords 1` sweeps them on the
+Lines timed by the line light up whole; `-spectra.lyricsSimulateWords 1` sweeps them on the
 estimate instead, as the Lyrics page's switch does. Untimed lyrics show every line lit, whatever `-at`.
 
 Run it on an iOS 26 simulator, by UDID: iOS 27 refuses an app without a scene delegate and crashes it

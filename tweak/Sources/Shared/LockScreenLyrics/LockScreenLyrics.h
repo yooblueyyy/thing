@@ -3,4 +3,4 @@
 // lines and the clock come from Karaoke.
 #import <Foundation/Foundation.h>
 
-#define SGKeyLockScreenLyrics @"spotifyglass.lockScreenLyrics"
+#define SGKeyLockScreenLyrics @"spectra.lockScreenLyrics"

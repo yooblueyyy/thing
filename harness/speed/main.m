@@ -147,7 +147,7 @@ static void check(OSStatus status, const char *what) {
 @end
 
 __attribute__((constructor(101))) static void sgr_harnessDefaults(void) {
-    [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"spotifyglass.redesign"];
+    [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"spectra.redesign"];
 }
 
 int main(int argc, char *argv[]) {

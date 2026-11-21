@@ -12,18 +12,18 @@ static NSDictionary *choiceDef(SGHomeChoice choice) {
             // Eight rotations of the green the wash was born as, at the same depth and saturation
             // around the wheel, so each of them sits behind white text the way the green does.
             @(SGHomeChoiceTint): @{
-                @"key": @"spotifyglass.homeGradientTint",
+                @"key": @"spectra.homeGradientTint",
                 @"default": @0,
                 @"names": @[@"Spotify green", @"Teal", @"Blue", @"Indigo", @"Purple", @"Pink",
                             @"Red", @"Amber"],
             },
             @(SGHomeChoiceStrength): @{
-                @"key": @"spotifyglass.homeGradientStrength",
+                @"key": @"spectra.homeGradientStrength",
                 @"default": @1,
                 @"names": @[@"Subtle", @"Medium", @"Bold"],
             },
             @(SGHomeChoiceHeight): @{
-                @"key": @"spotifyglass.homeGradientHeight",
+                @"key": @"spectra.homeGradientHeight",
                 @"default": @1,
                 @"names": @[@"Short", @"Medium", @"Tall", @"The whole screen"],
             },

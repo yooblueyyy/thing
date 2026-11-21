@@ -281,7 +281,7 @@ static void check(OSStatus status, const char *what) {
 __attribute__((constructor(101))) static void sgr_harnessDefaults(void) {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     for (NSString *key in defaults.dictionaryRepresentation.allKeys) {
-        if ([key hasPrefix:@"spotifyglass.dsp"]) [defaults removeObjectForKey:key];
+        if ([key hasPrefix:@"spectra.dsp"]) [defaults removeObjectForKey:key];
     }
     NSString *swap = @"desc: swap the channels\n@sample\nt = spl0;\nspl0 = spl1;\nspl1 = t;\n";
     [swap writeToFile:[SGDSPLibraryDirectory(SGDSPFileLiveprog) stringByAppendingPathComponent:@"swapChannels.eel"] atomically:YES

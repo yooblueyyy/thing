@@ -10,29 +10,29 @@ PACKAGE_VERSION := $(SG_VERSION)
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME := spotifyglass
+TWEAK_NAME := spectra
 
 # Every source under Sources/, so a new feature needs no Makefile edit. Shared/Flags/SGFlagList.m
 # is generated from the IPA by scripts/extract-flags.py.
-spotifyglass_FILES := $(shell find Sources -name '*.m' -o -name '*.x' -o -name '*.swift' | sort)
-spotifyglass_CFLAGS := -fobjc-arc -ISources -DSG_VERSION=\"$(SG_VERSION)\"
-spotifyglass_FRAMEWORKS := UIKit QuartzCore UniformTypeIdentifiers MediaPlayer CoreImage AudioToolbox AVFoundation CoreHaptics Accelerate
+spectra_FILES := $(shell find Sources -name '*.m' -o -name '*.x' -o -name '*.swift' | sort)
+spectra_CFLAGS := -fobjc-arc -ISources -DSG_VERSION=\"$(SG_VERSION)\"
+spectra_FRAMEWORKS := UIKit QuartzCore UniformTypeIdentifiers MediaPlayer CoreImage AudioToolbox AVFoundation CoreHaptics Accelerate
 # Runtime swizzling instead of Substrate so the dylib has no extra dependency inside the IPA.
-spotifyglass_LOGOS_DEFAULT_GENERATOR := internal
+spectra_LOGOS_DEFAULT_GENERATOR := internal
 
 # The audio effects' third-party C (vendor/audio: libbs2b, WDL's EEL2) is built by its own Makefile into a
 # static library with its own flags, out of this one's -Werror and with its symbols hidden, into
 # vendor/audio/build/ios/, which `clean` leaves alone and later builds only update. Listed as an object file
 # it is a prerequisite of the link and linked in; only the two files using it see its headers.
 SG_AUDIO := ../vendor/audio
-spotifyglass_OBJ_FILES := $(SG_AUDIO)/build/ios/libsgaudio.a
+spectra_OBJ_FILES := $(SG_AUDIO)/build/ios/libsgaudio.a
 Sources/Shared/AudioEffects/SGDSPCrossfeed.m_CFLAGS := -isystem $(SG_AUDIO)/libbs2b
 Sources/Shared/AudioEffects/SGDSPLiveprog.m_CFLAGS := -isystem $(SG_AUDIO)/wdl/eel2
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 # The library is brought up to date before the tweak's instance builds, so the link finds it current.
-spotifyglass.all.tweak.variables: sg-audio
+spectra.all.tweak.variables: sg-audio
 .PHONY: sg-audio
 sg-audio:
 	@$(MAKE) --no-print-directory -C $(SG_AUDIO) PLATFORM=ios

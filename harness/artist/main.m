@@ -452,7 +452,7 @@ static NSArray<NSArray *> *musicList(void) {
 
 // Before every %ctor, so the redesign's gate reads on.
 __attribute__((constructor(101))) static void sgr_harnessDefaults(void) {
-    [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"spotifyglass.redesign"];
+    [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"spectra.redesign"];
 }
 
 int main(int argc, char *argv[]) {

@@ -9,7 +9,7 @@ static void resetAll(void) {
     NSUserDefaults *store = NSUserDefaults.standardUserDefaults;
     NSUInteger removed = 0;
     for (NSString *key in [store persistentDomainForName:NSBundle.mainBundle.bundleIdentifier].allKeys) {
-        if (![key hasPrefix:@"spotifyglass."]) continue;
+        if (![key hasPrefix:@"spectra."]) continue;
         [store removeObjectForKey:key];
         removed++;
     }

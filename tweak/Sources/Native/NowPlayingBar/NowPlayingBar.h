@@ -2,6 +2,6 @@
 // (NowPlayingBar.x), and the bar's flags (NowPlayingBarSettings.m).
 #import <UIKit/UIKit.h>
 
-#define SGHideBarConnect @"spotifyglass.hide.barConnect"   // the device button in the now playing bar
+#define SGHideBarConnect @"spectra.hide.barConnect"   // the device button in the now playing bar
 
 UIViewController *SGNowPlayingBarSettingsPage(void);

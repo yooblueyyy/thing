@@ -7,13 +7,13 @@
 	<key>CFBundleDisplayName</key>
 	<string>Spotify</string>
 	<key>CFBundleExecutable</key>
-	<string>SpotifyGlassLiveActivity</string>
+	<string>SpectraLiveActivity</string>
 	<key>CFBundleIdentifier</key>
 	<string>HOST_BUNDLE_ID.liveactivity</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>SpotifyGlassLiveActivity</string>
+	<string>SpectraLiveActivity</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>

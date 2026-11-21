@@ -2,10 +2,10 @@
 // itself and counts what it stopped. On unless switched off.
 #import <UIKit/UIKit.h>
 
-#define SGKeyBlockTelemetry @"spotifyglass.blockTelemetry"
+#define SGKeyBlockTelemetry @"spectra.blockTelemetry"
 // Search clutter (Clutter.m); on forces its flags off.
-#define SGKeyHideSearchVideos @"spotifyglass.adblock.searchVideos"
-#define SGKeyHideSocialProof @"spotifyglass.adblock.socialProof"
+#define SGKeyHideSearchVideos @"spectra.adblock.searchVideos"
+#define SGKeyHideSocialProof @"spectra.adblock.socialProof"
 
 // The destinations it knows in the order it lists them, and how many requests to one of them it
 // has answered instead of letting out (nil label for all of them).

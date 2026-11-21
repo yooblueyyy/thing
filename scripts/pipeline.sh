@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the spotifyglass tweak and injects it (plus FLEX) into a decrypted Spotify IPA.
+# Builds the spectra tweak and injects it (plus FLEX) into a decrypted Spotify IPA.
 #
 #   scripts/pipeline.sh <decrypted.ipa> [-o out.ipa] [--no-flex] [--install] [--name N] [--icon P.png]   (or: make build / make install)
 #
@@ -63,8 +63,8 @@ rm -f "$ROOT/out/.info.plist"
 # a fork left behind by a release is named for the version it really is.
 MOD_VERSION="$(cat "$ROOT/version.txt" 2>/dev/null || true)"
 : "${MOD_VERSION:=0.0.0}"
-OUT="${OUT:-$ROOT/out/spoti.pw-$MOD_VERSION.ipa}"
-echo "==> spoti.pw $MOD_VERSION on Spotify $SPOTIFY_VERSION -> $OUT"
+OUT="${OUT:-$ROOT/out/Spectra-$MOD_VERSION.ipa}"
+echo "==> Spectra $MOD_VERSION on Spotify $SPOTIFY_VERSION -> $OUT"
 
 # The flag table is generated rather than committed, so it always matches the IPA being built.
 if [ ! -f "$ROOT/tweak/Sources/Shared/Flags/SGFlagList.m" ]; then
@@ -94,7 +94,7 @@ if xcrun --sdk iphoneos --find swiftc >/dev/null 2>&1; then
   unzip -p "$IN" "${APP_DIR}Info.plist" > "$ROOT/out/.info.plist"
   "$ROOT/scripts/build-extension.sh" "$ROOT/out/.info.plist" "$EXT_DIR"
   rm -f "$ROOT/out/.info.plist"
-  FILES+=("$EXT_DIR/SpotifyGlassLiveActivity.appex")
+  FILES+=("$EXT_DIR/SpectraLiveActivity.appex")
 else
   echo "==> no Xcode selected: building without the Live Activity extension"
 fi
@@ -102,9 +102,9 @@ fi
 # Spotify's widget reads what the app writes through App Group suites the re-signed IPA is not entitled
 # to; this dylib, loaded by the app and by the widget, puts both on a group the signature does have.
 echo "==> building the App Group shim"
-GROUPS_DYLIB="$ROOT/out/SpotifyGlassAppGroups.dylib"
+GROUPS_DYLIB="$ROOT/out/SpectraAppGroups.dylib"
 xcrun --sdk iphoneos clang -target arm64-apple-ios16.0 -dynamiclib -fobjc-arc -Os -framework Foundation -framework Security \
-  -install_name @rpath/SpotifyGlassAppGroups.dylib -o "$GROUPS_DYLIB" "$ROOT/extension/AppGroups/AppGroups.m"
+  -install_name @rpath/SpectraAppGroups.dylib -o "$GROUPS_DYLIB" "$ROOT/extension/AppGroups/AppGroups.m"
 FILES+=("$GROUPS_DYLIB")
 
 echo "==> injecting"
@@ -116,7 +116,7 @@ WIDGET_BIN="${APP_DIR}PlugIns/WidgetExtension.appex/WidgetExtension"
 if unzip -l "$OUT" "$WIDGET_BIN" >/dev/null 2>&1; then
   PATCH="$(mktemp -d)"
   unzip -q "$OUT" "$WIDGET_BIN" -d "$PATCH"
-  "$ROOT/scripts/insert-dylib.py" "$PATCH/$WIDGET_BIN" @rpath/SpotifyGlassAppGroups.dylib
+  "$ROOT/scripts/insert-dylib.py" "$PATCH/$WIDGET_BIN" @rpath/SpectraAppGroups.dylib
   # Fakesigned again with its own entitlements, the way cyan -s left it, for TrollStore.
   ldid -e "$PATCH/$WIDGET_BIN" > "$PATCH/ents.plist"
   ldid -S"$PATCH/ents.plist" "$PATCH/$WIDGET_BIN"

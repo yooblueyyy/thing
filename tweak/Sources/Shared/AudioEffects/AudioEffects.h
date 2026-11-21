@@ -17,53 +17,53 @@
 #pragma mark - keys
 
 // The master switch, off until asked for. Off, Spotify's sound is left exactly as it was.
-#define SGKeyDSP                        @"spotifyglass.dsp"
+#define SGKeyDSP                        @"spectra.dsp"
 
 // Output control, applied while the master switch is on.
-#define SGKeyDSPPostGain                @"spotifyglass.dsp.postGain"            // dB
-#define SGKeyDSPLimiterThreshold        @"spotifyglass.dsp.limiterThreshold"    // dB
-#define SGKeyDSPLimiterRelease          @"spotifyglass.dsp.limiterRelease"      // ms
+#define SGKeyDSPPostGain                @"spectra.dsp.postGain"            // dB
+#define SGKeyDSPLimiterThreshold        @"spectra.dsp.limiterThreshold"    // dB
+#define SGKeyDSPLimiterRelease          @"spectra.dsp.limiterRelease"      // ms
 
-#define SGKeyDSPCompander               @"spotifyglass.dsp.compander"
-#define SGKeyDSPCompanderTime           @"spotifyglass.dsp.compander.time"      // s, the release
+#define SGKeyDSPCompander               @"spectra.dsp.compander"
+#define SGKeyDSPCompanderTime           @"spectra.dsp.compander.time"      // s, the release
 // Seven amounts, "a;a;a;a;a;a;a", one per band at SGDSPCompanderFrequencies, each within SGDSPCompanderGainLimit:
 // over 0 evens the band's loud and quiet moments out, under 0 pulls them apart.
-#define SGKeyDSPCompanderGains          @"spotifyglass.dsp.compander.gains"
+#define SGKeyDSPCompanderGains          @"spectra.dsp.compander.gains"
 
-#define SGKeyDSPBass                    @"spotifyglass.dsp.bass"
-#define SGKeyDSPBassGain                @"spotifyglass.dsp.bass.gain"           // dB, the most it lifts
+#define SGKeyDSPBass                    @"spectra.dsp.bass"
+#define SGKeyDSPBassGain                @"spectra.dsp.bass.gain"           // dB, the most it lifts
 
-#define SGKeyDSPEqualizer               @"spotifyglass.dsp.eq"
+#define SGKeyDSPEqualizer               @"spectra.dsp.eq"
 // Fifteen gains in dB, "g;g;...;g", at SGDSPEqualizerFrequencies, each within SGDSPEqualizerGainLimit.
-#define SGKeyDSPEqualizerGains          @"spotifyglass.dsp.eq.gains"
+#define SGKeyDSPEqualizerGains          @"spectra.dsp.eq.gains"
 
 // The Graphic EQ, in AutoEq's GraphicEQ format: "GraphicEQ: 20 -1.2; 21 -1.1; ...".
-#define SGKeyDSPGraphicEq               @"spotifyglass.dsp.geq"
-#define SGKeyDSPGraphicEqNodes          @"spotifyglass.dsp.geq.nodes"
+#define SGKeyDSPGraphicEq               @"spectra.dsp.geq"
+#define SGKeyDSPGraphicEqNodes          @"spectra.dsp.geq.nodes"
 
 // File effects name a file in their library (SGDSPLibraryFiles), by its name alone: the app's container
 // moves on every reinstall, the name does not.
-#define SGKeyDSPConvolver               @"spotifyglass.dsp.convolver"
-#define SGKeyDSPConvolverFile           @"spotifyglass.dsp.convolver.file"
-#define SGKeyDSPConvolverMode           @"spotifyglass.dsp.convolver.mode"      // SGDSPConvolverModeNames index
+#define SGKeyDSPConvolver               @"spectra.dsp.convolver"
+#define SGKeyDSPConvolverFile           @"spectra.dsp.convolver.file"
+#define SGKeyDSPConvolverMode           @"spectra.dsp.convolver.mode"      // SGDSPConvolverModeNames index
 
-#define SGKeyDSPDDC                     @"spotifyglass.dsp.ddc"
-#define SGKeyDSPDDCFile                 @"spotifyglass.dsp.ddc.file"
+#define SGKeyDSPDDC                     @"spectra.dsp.ddc"
+#define SGKeyDSPDDCFile                 @"spectra.dsp.ddc.file"
 
-#define SGKeyDSPLiveprog                @"spotifyglass.dsp.liveprog"
-#define SGKeyDSPLiveprogFile            @"spotifyglass.dsp.liveprog.file"
+#define SGKeyDSPLiveprog                @"spectra.dsp.liveprog"
+#define SGKeyDSPLiveprogFile            @"spectra.dsp.liveprog.file"
 
-#define SGKeyDSPReverb                  @"spotifyglass.dsp.reverb"
-#define SGKeyDSPReverbPreset            @"spotifyglass.dsp.reverb.preset"       // SGDSPReverbPresetNames index
+#define SGKeyDSPReverb                  @"spectra.dsp.reverb"
+#define SGKeyDSPReverbPreset            @"spectra.dsp.reverb.preset"       // SGDSPReverbPresetNames index
 
-#define SGKeyDSPStereoWide              @"spotifyglass.dsp.wide"
-#define SGKeyDSPStereoWideLevel         @"spotifyglass.dsp.wide.level"          // percent, 50 leaving the width as it is
+#define SGKeyDSPStereoWide              @"spectra.dsp.wide"
+#define SGKeyDSPStereoWideLevel         @"spectra.dsp.wide.level"          // percent, 50 leaving the width as it is
 
-#define SGKeyDSPCrossfeed               @"spotifyglass.dsp.crossfeed"
-#define SGKeyDSPCrossfeedMode           @"spotifyglass.dsp.crossfeed.mode"      // SGDSPCrossfeedModeNames index
+#define SGKeyDSPCrossfeed               @"spectra.dsp.crossfeed"
+#define SGKeyDSPCrossfeedMode           @"spectra.dsp.crossfeed.mode"      // SGDSPCrossfeedModeNames index
 
-#define SGKeyDSPTube                    @"spotifyglass.dsp.tube"
-#define SGKeyDSPTubeDrive               @"spotifyglass.dsp.tube.drive"          // dB
+#define SGKeyDSPTube                    @"spectra.dsp.tube"
+#define SGKeyDSPTubeDrive               @"spectra.dsp.tube.drive"          // dB
 
 #pragma mark - values
 
@@ -111,7 +111,7 @@ typedef NS_ENUM(NSInteger, SGDSPFileKind) {
     SGDSPFileLiveprog,          // Liveprog's .eel
 };
 
-// Documents/spoti.pw/Audio effects/<Convolver|DDC|Liveprog>, made on first use, empty until files are imported.
+// Documents/Spectra/Audio effects/<Convolver|DDC|Liveprog>, made on first use, empty until files are imported.
 NSString *SGDSPLibraryDirectory(SGDSPFileKind kind);
 NSArray<NSString *> *SGDSPLibraryFiles(SGDSPFileKind kind);   // names, sorted
 NSArray<NSString *> *SGDSPFileExtensions(SGDSPFileKind kind); // lowercase, without the dot

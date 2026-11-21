@@ -7,8 +7,8 @@ NSString *const SGNavbarURI = @"uri";
 NSString *const SGNavbarIcon = @"icon";
 NSString *const SGNavbarHidden = @"hidden";
 
-static NSString *const kNavbarLayout = @"spotifyglass.navbar.layout";
-static NSString *const kNavbarStock = @"spotifyglass.navbar.stock";
+static NSString *const kNavbarLayout = @"spectra.navbar.layout";
+static NSString *const kNavbarStock = @"spectra.navbar.stock";
 
 // Only property list types go in, so a corrupt read cannot be anything but an array of dictionaries.
 static NSArray *listOfKind(NSString *key, Class kind) {

@@ -9,7 +9,7 @@ pitch the way it would on the phone. Speed and pitch themselves are stubs that l
     xcrun simctl launch --console-pty <udid> com.vojta.menuharness [footer] [nospeed] [loading] [stuck] [open]
 
 It has a scene delegate, so it runs on the iOS 27 simulator as well as 26. The mod's own lines
-(`SGLog`) go to the unified log: `xcrun simctl spawn <udid> log stream --predicate 'eventMessage CONTAINS "[spotifyglass]"'`.
+(`SGLog`) go to the unified log: `xcrun simctl spawn <udid> log stream --predicate 'eventMessage CONTAINS "[spectra]"'`.
 
 The plain run opens the menu at 1 s, the block at 3 s, moves both sliders at 5 s and closes the block
 at 7 s. `footer` gives the mock table a header of Spotify's, so the block goes to the footer;

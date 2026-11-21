@@ -9,7 +9,7 @@
 
 #pragma mark - now playing artwork
 
-NSNotificationName const SGRNowPlayingArtworkDidChangeNotification = @"spotifyglass.redesign.nowPlayingArtworkDidChange";
+NSNotificationName const SGRNowPlayingArtworkDidChangeNotification = @"spectra.redesign.nowPlayingArtworkDidChange";
 
 // The picture published, the track it was published for, the picture it is (its key) and how it was had.
 static UIImage *sg_artwork;
@@ -83,7 +83,7 @@ static NSURLSession *artworkSession(void) {
         // An image id is the picture's own digest, so a stored answer never goes stale.
         NSURL *caches = [NSFileManager.defaultManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask].firstObject;
         configuration.URLCache = [[NSURLCache alloc] initWithMemoryCapacity:0 diskCapacity:24 * 1024 * 1024
-                                                               directoryURL:[caches URLByAppendingPathComponent:@"spotifyglass-artwork"]];
+                                                               directoryURL:[caches URLByAppendingPathComponent:@"spectra-artwork"]];
         configuration.requestCachePolicy = NSURLRequestReturnCacheDataElseLoad;
         configuration.timeoutIntervalForRequest = 20;
         session = [NSURLSession sessionWithConfiguration:configuration];

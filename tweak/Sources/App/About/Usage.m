@@ -1,4 +1,4 @@
-// What the update check tells spoti.pw about this install, so installs can be counted: versions,
+// What the update check tells Spectra about this install, so installs can be counted: versions,
 // device, look, and which big switches are on. Nothing of the account or of what is played.
 #import <dlfcn.h>
 #import <sys/utsname.h>
@@ -15,10 +15,10 @@
 #import "Shared/LyricsSources/LyricsSources.h"
 #import "Shared/Privacy/Privacy.h"
 
-// Outside "spotifyglass." on purpose: Reset all settings must not mint a second install, and a
+// Outside "spectra." on purpose: Reset all settings must not mint a second install, and a
 // settings backup restored on another phone must not carry this one's id along.
-static NSString *const kInstall = @"spotipw.install";
-static NSString *const kAsked = @"spotipw.asked";
+static NSString *const kInstall = @"spectra.install";
+static NSString *const kAsked = @"spectra.asked";
 
 // Not SGEnabled: after a reset that reads every unset switch as off, and this is not one of them.
 static BOOL usageOn(void) {
@@ -43,7 +43,7 @@ BOOL SGUsageOwed(void) {
     return usageOn() && ![[NSUserDefaults.standardUserDefaults stringForKey:kAsked] isEqualToString:today()];
 }
 
-// Marked when asked, not when answered: a day spoti.pw is down costs that day's count, not a request
+// Marked when asked, not when answered: a day Spectra is down costs that day's count, not a request
 // on every launch.
 void SGUsageNoteAsked(void) {
     [NSUserDefaults.standardUserDefaults setObject:today() forKey:kAsked];

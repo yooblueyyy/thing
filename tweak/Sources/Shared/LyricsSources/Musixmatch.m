@@ -8,7 +8,7 @@
 
 static NSString *const kAPI = @"https://apic-appmobile.musixmatch.com/ws/1.1/";
 static NSString *const kAppID = @"mac-ios-v2.0";
-static NSString *const kTokenKey = @"spotifyglass.musixmatch.token";
+static NSString *const kTokenKey = @"spectra.musixmatch.token";
 static const NSTimeInterval kTimeout = 5;
 // After Musixmatch refused a token, typically with a captcha, it is not asked again for this long.
 static const NSTimeInterval kTokenPause = 600;

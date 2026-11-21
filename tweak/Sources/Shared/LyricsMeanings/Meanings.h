@@ -4,7 +4,7 @@
 #import "Shared/Lyrics/Lyrics.h"
 
 // Whose annotations show, as SGLyricsMeaningsLevel; unset is off.
-#define SGKeyLyricsMeanings @"spotifyglass.lyricsMeanings"
+#define SGKeyLyricsMeanings @"spectra.lyricsMeanings"
 
 typedef NS_ENUM(NSInteger, SGLyricsMeaningsLevel) {
     SGLyricsMeaningsOff = 0,

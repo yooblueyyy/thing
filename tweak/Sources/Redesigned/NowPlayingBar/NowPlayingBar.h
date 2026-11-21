@@ -5,7 +5,7 @@
 // native look's lives in Native/NowPlayingBar/.
 #import <UIKit/UIKit.h>
 
-#define SGRHideBarConnect @"spotifyglass.redesign.hide.barConnect"   // the device button on the card
+#define SGRHideBarConnect @"spectra.redesign.hide.barConnect"   // the device button on the card
 
 UIViewController *SGRNowPlayingBarSettingsPage(void);
 

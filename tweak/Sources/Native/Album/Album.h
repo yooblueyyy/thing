@@ -2,17 +2,17 @@
 // An unset switch is off.
 #import <UIKit/UIKit.h>
 
-#define SGKeyAlbumBackdrop @"spotifyglass.albumBackdrop"
+#define SGKeyAlbumBackdrop @"spectra.albumBackdrop"
 
-#define SGHideAlbumExplore @"spotifyglass.hide.albumExplore"
-#define SGHideAlbumAddTo @"spotifyglass.hide.albumAddTo"
-#define SGHideAlbumDownload @"spotifyglass.hide.albumDownload"
-#define SGHideAlbumMore @"spotifyglass.hide.albumMore"
+#define SGHideAlbumExplore @"spectra.hide.albumExplore"
+#define SGHideAlbumAddTo @"spectra.hide.albumAddTo"
+#define SGHideAlbumDownload @"spectra.hide.albumDownload"
+#define SGHideAlbumMore @"spectra.hide.albumMore"
 
-#define SGHideAlbumMoreBy @"spotifyglass.hide.albumMoreBy"
-#define SGHideAlbumVideos @"spotifyglass.hide.albumVideos"
-#define SGHideAlbumConcerts @"spotifyglass.hide.albumConcerts"
-#define SGHideAlbumMerch @"spotifyglass.hide.albumMerch"
-#define SGHideAlbumYouMightLike @"spotifyglass.hide.albumYouMightLike"
+#define SGHideAlbumMoreBy @"spectra.hide.albumMoreBy"
+#define SGHideAlbumVideos @"spectra.hide.albumVideos"
+#define SGHideAlbumConcerts @"spectra.hide.albumConcerts"
+#define SGHideAlbumMerch @"spectra.hide.albumMerch"
+#define SGHideAlbumYouMightLike @"spectra.hide.albumYouMightLike"
 
 UIViewController *SGAlbumSettingsPage(void);   // opened from the Home & Library page

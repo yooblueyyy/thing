@@ -2,7 +2,7 @@
 // look's and stored under its own key; unset is #37F200, negative keeps Spotify's own green.
 #import <UIKit/UIKit.h>
 
-#define SGRKeyAccent @"spotifyglass.redesign.accent"   // 0xRRGGBB
+#define SGRKeyAccent @"spectra.redesign.accent"   // 0xRRGGBB
 
 UIColor *SGRAccentColor(void);   // nil while Spotify's own green is kept
 NSString *SGRAccentLabel(void);  // "#RRGGBB", or the name of Spotify's own

@@ -10,14 +10,14 @@
 
 // The sources in the order they are asked, as their keys. Unset means the order below, so a source
 // added in a later version joins the end of everyone's list instead of shuffling it.
-#define SGKeyLyricsProviders @"spotifyglass.lyricsProviders"
+#define SGKeyLyricsProviders @"spectra.lyricsProviders"
 // Offers the lyrics card on tracks Spotify itself has no lyrics for.
-#define SGKeyLyricsAllTracks @"spotifyglass.lyricsAllTracks"
+#define SGKeyLyricsAllTracks @"spectra.lyricsAllTracks"
 // Names the source the shown lines came from, on the full screen page.
-#define SGKeyLyricsCredit @"spotifyglass.lyricsCredit"
+#define SGKeyLyricsCredit @"spectra.lyricsCredit"
 // The language a line's translation is asked for in, as an index into SGLyricsTranslationLanguages;
 // unset or 0 takes whatever translation the source has.
-#define SGKeyLyricsTranslationLanguage @"spotifyglass.lyricsTranslationLanguage"
+#define SGKeyLyricsTranslationLanguage @"spectra.lyricsTranslationLanguage"
 
 // What a source answers with, and what the chain merges several of into one.
 @interface SGLyricsResult : NSObject

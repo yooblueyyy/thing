@@ -9,13 +9,13 @@ static const CGFloat kAspectSlack = 0.02;
 static dispatch_queue_t queue(void) {
     static dispatch_queue_t shared;
     static dispatch_once_t once;
-    dispatch_once(&once, ^{ shared = dispatch_queue_create("com.spotifyglass.lockartwork", DISPATCH_QUEUE_SERIAL); });
+    dispatch_once(&once, ^{ shared = dispatch_queue_create("com.spectra.lockartwork", DISPATCH_QUEUE_SERIAL); });
     return shared;
 }
 
 static NSURL *directory(void) {
     NSString *caches = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    NSURL *url = [NSURL fileURLWithPath:[caches stringByAppendingPathComponent:@"spoti.pw/LockArtwork"]];
+    NSURL *url = [NSURL fileURLWithPath:[caches stringByAppendingPathComponent:@"Spectra/LockArtwork"]];
     [NSFileManager.defaultManager createDirectoryAtURL:url withIntermediateDirectories:YES attributes:nil error:nil];
     return url;
 }

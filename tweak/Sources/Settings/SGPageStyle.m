@@ -70,9 +70,9 @@ void SGInsetForBars(UITableView *table) {
 // The pages follow the running look's black and accent colour, read here by their keys so the page
 // framework depends on no layer: the native look's AMOLED switch and accent (Native/Appearance), or the
 // redesign's accent (Redesigned/Kit/SGRAccent.h), which is always black.
-static NSString *const kAmoledKey = @"spotifyglass.amoled";
-static NSString *const kAccentKey = @"spotifyglass.accent";
-static NSString *const kRedesignAccentKey = @"spotifyglass.redesign.accent";
+static NSString *const kAmoledKey = @"spectra.amoled";
+static NSString *const kAccentKey = @"spectra.accent";
+static NSString *const kRedesignAccentKey = @"spectra.redesign.accent";
 
 static UIColor *lookAccent(void) {
     NSInteger rgb = SGInt(SGRedesignedUI() ? kRedesignAccentKey : kAccentKey, -1);

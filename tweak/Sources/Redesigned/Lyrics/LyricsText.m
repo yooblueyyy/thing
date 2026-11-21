@@ -3,7 +3,7 @@
 #import "Core/SGCore.h"
 #import "LyricsText.h"
 
-NSNotificationName const SGRLyricsTextDidChangeNotification = @"spotifyglass.redesign.lyricsTextDidChange";
+NSNotificationName const SGRLyricsTextDidChangeNotification = @"spectra.redesign.lyricsTextDidChange";
 
 static NSString *keyOf(SGRLyricsText text) {
     switch (text) {

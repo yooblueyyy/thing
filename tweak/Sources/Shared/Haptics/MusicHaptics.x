@@ -439,7 +439,7 @@ static double quietAfter(void) {
 }
 
 static void *playerLoop(void *unused) {
-    pthread_setname_np("spotifyglass.music-haptics");
+    pthread_setname_np("spectra.music-haptics");
     double lastEvent = 0;
     BOOL idle = YES;
     for (;;) {

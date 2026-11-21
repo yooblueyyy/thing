@@ -49,4 +49,4 @@ source stops, a file missing from the library and its error, then a 16-bit inter
 Use a device of your own on the iOS 26.5 runtime (`xcrun simctl create`), by UDID, and launch it once: the iOS 27
 simulator crashes harnesses like this one, and every crash puts a dialog on the Mac's screen. The tweak's own lines
 are in the unified log:
-`xcrun simctl spawn <udid> log show --last 2m --predicate 'eventMessage CONTAINS "[spotifyglass]"'`.
+`xcrun simctl spawn <udid> log show --last 2m --predicate 'eventMessage CONTAINS "[spectra]"'`.
