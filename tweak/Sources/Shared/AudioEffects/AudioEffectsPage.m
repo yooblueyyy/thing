@@ -521,7 +521,7 @@ static UIView *valueAndChevron(NSString *text) {
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
     SGDSPEffect *e = [self effectIn:section];
-    return e ? [self rowCountOf:e] : 1;
+    return e ? [self rowCountOf:e] : 2;
 }
 
 // No views, but asked for all the same: without them the table keeps its own spacing, not the heights below.
@@ -583,6 +583,13 @@ static UIView *valueAndChevron(NSString *text) {
         return cell;
     }
     SGDSPEffect *e = [self effectIn:path.section];
+    if (!e && path.row == 0) {
+        UITableViewCell *cell = SGDequeueCell(table, @"presets");
+        SGFillCell(cell, @"Sound presets", @"Warm, Bass, Vocal, Electronic, Late night", nil, @"slider.horizontal.3");
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        cell.separatorInset = UIEdgeInsetsMake(0, 48, 0, 0);
+        return cell;
+    }
     if (!e) {
         UITableViewCell *cell = SGDequeueCell(table, @"reset");
         SGFillCell(cell, @"Reset all effects", nil, SGRed(), @"arrow.counterclockwise");
@@ -661,7 +668,8 @@ static UIView *valueAndChevron(NSString *text) {
 - (void)tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath *)path {
     [table deselectRowAtIndexPath:path animated:YES];
     if (path.section == (NSInteger)_effects.count + 1) {
-        [self confirmReset];
+        if (path.row == 0) [self pickPreset:[table cellForRowAtIndexPath:path]];
+        else [self confirmReset];
         return;
     }
     SGDSPRow *row = [self rowAt:path];
@@ -736,6 +744,21 @@ static UIView *valueAndChevron(NSString *text) {
     if (!content || [content.secondaryText isEqualToString:status]) return;
     content.secondaryText = status;
     cell.contentConfiguration = content;
+}
+
+- (void)pickPreset:(UIView *)source {
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"Sound presets"
+        message:@"A preset replaces every effect's settings. Your imported files stay." preferredStyle:UIAlertControllerStyleActionSheet];
+    [SGDSPSoundPresetNames() enumerateObjectsUsingBlock:^(NSString *name, NSUInteger i, BOOL *stop) {
+        [sheet addAction:[UIAlertAction actionWithTitle:name style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            SGDSPApplySoundPreset((NSInteger)i);
+            [self readState];
+            [self.tableView reloadData];
+        }]];
+    }];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    sheet.popoverPresentationController.sourceView = source ?: self.view;
+    [self presentViewController:sheet animated:YES completion:nil];
 }
 
 - (void)confirmReset {

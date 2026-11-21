@@ -134,3 +134,9 @@ NSString *SGDSPError(NSString *switchKey);
 void SGDSPEqualizerResponse(NSArray<NSNumber *> *gains, NSInteger count, double *frequencies, double *decibels);
 // The compander's amounts drawn as a smooth curve, the same way.
 void SGDSPCompanderResponse(NSArray<NSNumber *> *gains, NSInteger count, double *frequencies, double *values);
+
+#pragma mark - sound presets
+
+// Whole-sound starting points: each resets every effect, then turns on and sets a few. Applies at once.
+NSArray<NSString *> *SGDSPSoundPresetNames(void);
+void SGDSPApplySoundPreset(NSInteger index);
