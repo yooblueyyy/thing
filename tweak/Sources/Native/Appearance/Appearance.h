@@ -6,6 +6,14 @@
 #define SGKeyAmoled @"spectra.amoled"
 #define SGKeyAccent @"spectra.accent"   // 0xRRGGBB; unset or negative keeps Spotify's own green
 
+// App theme: Spotify's greys repainted in a tint. 0 keeps Spotify's own; the last is Custom, its
+// background picked under SGKeyThemeCustom (0xRRGGBB). A theme with an accent sets SGKeyAccent when picked.
+#define SGKeyTheme       @"spectra.theme"
+#define SGKeyThemeCustom @"spectra.theme.custom"
+NSArray<NSString *> *SGThemeNames(void);
+NSString *SGThemeLabel(void);
+void SGChooseTheme(void);
+
 UIColor *SGAccentColor(void);   // nil while Spotify's own green is kept
 NSString *SGAccentLabel(void);  // "#RRGGBB", or the name of Spotify's own
 void SGPickAccent(void);        // the system colour picker over the top of the app, stored on the way out

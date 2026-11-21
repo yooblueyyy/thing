@@ -24,6 +24,7 @@ static void chooseAccent(void) {
 // The native look's rows of the Appearance card (App/Pages.m).
 NSArray<SGModRow *> *SGNativeAppearanceRows(void) {
     return @[
+        SGWithSymbol(SGStatActionRow(@"Theme", nil, ^NSString *{ return SGThemeLabel(); }, ^{ SGChooseTheme(); }), @"swatchpalette"),
         SGWithSymbol(SGOptionRow(@"AMOLED background", nil, SGKeyAmoled), @"moon"),
         SGWithSymbol(SGStatActionRow(@"Accent colour", nil, ^NSString *{ return SGAccentLabel(); }, ^{ chooseAccent(); }), @"paintpalette"),
     ];
